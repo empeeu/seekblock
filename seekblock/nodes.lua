@@ -1,4 +1,4 @@
-minetest.register_node("hideandseekblock:wall", {
+minetest.register_node("seekblock:wall", {
     description = "Wall and floor",
     tiles = {"wall.png"},
     use_texture_alpha = "",
@@ -13,7 +13,7 @@ minetest.register_node("hideandseekblock:wall", {
         -- oddly_breakable_by_hand=1
     -- }
 })
-minetest.register_node("hideandseekblock:fall", {
+minetest.register_node("seekblock:fall", {
     description = "Hide obstacles",
     tiles = {"fall.png"},
     -- groups = {falling_node = 1},
@@ -37,7 +37,7 @@ minetest.register_node("hideandseekblock:fall", {
         oddly_breakable_by_hand=1
     }
 })
-minetest.register_node("hideandseekblock:hide", {
+minetest.register_node("seekblock:hide", {
     description = "Hiding block",
     tiles = {"hider.png"},
     use_texture_alpha = "",

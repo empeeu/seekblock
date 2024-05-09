@@ -31,9 +31,9 @@ local function make_level(name, pos, size, percent, time)
     local color_data = vm:get_param2_data()
 
     -- These are the blocks that matter
-    local fallblock = minetest.get_content_id("hideandseekblock:fall")
-    local hideblock = minetest.get_content_id("hideandseekblock:hide")
-    local wallblock = minetest.get_content_id("hideandseekblock:wall")
+    local fallblock = minetest.get_content_id("seekblock:fall")
+    local hideblock = minetest.get_content_id("seekblock:hide")
+    local wallblock = minetest.get_content_id("seekblock:wall")
     local airblock = minetest.get_content_id("air")
 
     -- Place the hiding block

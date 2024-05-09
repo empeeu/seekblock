@@ -24,9 +24,9 @@ function clean_seekblock(name, pos, size, winner)
     -- local size = registered_seekblock_games[name].size
 
     seekblock_storage:set_string(name, "")
-    local fallblock = minetest.get_content_id("hideandseekblock:fall")
-    local hideblock = minetest.get_content_id("hideandseekblock:hide")
-    local wallblock = minetest.get_content_id("hideandseekblock:wall")
+    local fallblock = minetest.get_content_id("seekblock:fall")
+    local hideblock = minetest.get_content_id("seekblock:hide")
+    local wallblock = minetest.get_content_id("seekblock:wall")
     local airblock = minetest.get_content_id("air")
 
     local p1, p2
