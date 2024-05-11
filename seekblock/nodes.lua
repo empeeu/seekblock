@@ -1,6 +1,6 @@
 minetest.register_node("seekblock:wall", {
     description = "Wall and floor",
-    tiles = {"wall.png"},
+    tiles = {"seekblock_wall.png"},
     use_texture_alpha = "",
     climbable = false,
     walkable = true,  -- If true, objects collide with node
@@ -15,11 +15,11 @@ minetest.register_node("seekblock:wall", {
 })
 minetest.register_node("seekblock:fall", {
     description = "Hide obstacles",
-    tiles = {"fall.png"},
+    tiles = {"seekblock_fall.png"},
     -- groups = {falling_node = 1},
     use_texture_alpha = "",
     climbable = false,
-    palette = "palette1.png",
+    palette = "seekblock_palette1.png",
     -- The node's `param2` is used to select a pixel from the image.
     -- Pixels are arranged from left to right and from top to bottom.
     -- The node's color will be multiplied with the selected pixel's color.
@@ -45,10 +45,10 @@ minetest.register_node("seekblock:fall", {
 })
 minetest.register_node("seekblock:hide", {
     description = "Hiding block",
-    tiles = {"hider.png"},
+    tiles = {"seekblock_hider.png"},
     use_texture_alpha = "",
     climbable = false,
-    palette = "palette1.png",
+    palette = "seekblock_palette1.png",
     -- The node's `param2` is used to select a pixel from the image.
     -- Pixels are arranged from left to right and from top to bottom.
     -- The node's color will be multiplied with the selected pixel's color.
@@ -74,7 +74,12 @@ minetest.register_node("seekblock:hide", {
         }
     },
     after_dig_node = function (pos, oldnode, oldmetadata, digger) 
-        local seekblock = minetest.deserialize(oldmetadata.fields.seekblock)
-        clean_seekblock(seekblock.player, seekblock.pos, seekblock.size, digger)
+        local seekblock = oldmetadata.fields.seekblock
+        -- minetest.log("action", "WE HAVE A WINNER ".. seekblock)
+        if seekblock ~= nil then             
+            -- minetest.log("action", "WE HAVE A WINNER ".. seekblock)
+            seekblock = minetest.deserialize(seekblock)
+            clean_seekblock(seekblock.player, seekblock.pos, seekblock.size, seekblock.id, digger)
+        end
     end
 })
