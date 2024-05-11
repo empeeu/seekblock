@@ -33,8 +33,14 @@ minetest.register_node("seekblock:fall", {
     -- Can be `true` if
     groups = {
         falling_node=1,
+        float=1,
         dig_immediate=3,
         oddly_breakable_by_hand=1
+    }, 
+    sounds = {
+        dug = {
+            name = "seekblock_pop"
+        }
     }
 })
 minetest.register_node("seekblock:hide", {
@@ -57,8 +63,15 @@ minetest.register_node("seekblock:hide", {
     -- Can be `true` if
     groups = {
         falling_node=1,
+        float=1,
         dig_immediate=3,
         oddly_breakable_by_hand=1
+    },
+    sounds = {
+        dug = {
+            name = "seekblock_gong",
+            gain = 2,
+        }
     },
     after_dig_node = function (pos, oldnode, oldmetadata, digger) 
         local seekblock = minetest.deserialize(oldmetadata.fields.seekblock)
