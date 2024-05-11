@@ -139,29 +139,5 @@ local function make_level(name, pos, size, percent, time)
     -- vm:calc_lighting(nil, nil, false)
 end
 
-minetest.register_chatcommand("seekblock", {
-    params = "<xyzsize> <percent>",
-    description = "Atest level",
-    -- privs = {}
-    func = function(name, params)
-        local paramss = params:split(" ")
-        local size = 8 -- 17 x 8 x 17 game area
-        local fillpercent = 16 -- percent
-        local time = 4 -- minutes
-        if paramss[1] ~= nil then 
-            size = tonumber(paramss[1])
-        end
-        if paramss[2] ~= nil then 
-            fillpercent = tonumber(paramss[2])
-        end
-        if paramss[3] ~= nil then 
-            time = tonumber(paramss[3])
-        end
-        local player = minetest.get_player_by_name(name)
-        local pos = player:get_pos()
-        make_level(name, pos, size, fillpercent, time)
-    end
-}
-)
 
 

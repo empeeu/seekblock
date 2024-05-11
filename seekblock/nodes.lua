@@ -56,7 +56,7 @@ minetest.register_node("seekblock:hide", {
     -- Only when `paramtype2` supports palettes.
     paramtype2 = "color",
     param2 = 128, --    tells which color is picked from the palette. The palette should have 256 pixels.
-    place_param2 = 128,
+    -- place_param2 = 128,
     walkable = true,  -- If true, objects collide with node
     pointable = true,
     diggable = true,  -- If false, can never be dug
