@@ -68,7 +68,7 @@ function clean_seekblock(name, pos, size, winner)
         vel={x=0, y=1, z=0},
         radius=.6,
         attached=winner,
-        texture="palette.png",
+        texture="palette1.png",
         glow=10,
     }
     minetest.add_particlespawner(particle_spawner)
