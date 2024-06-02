@@ -1,5 +1,4 @@
-
-local function make_level(name, pos, size, percent, time)
+function make_level(name, pos, size, percent, time)
     -- This function creates the game area for seekblock
     if seekblock_storage:get_string(name) ~= "" then
         minetest.log("action", "seekblock: User '"..name.."' tried to start another game but has active game, no spamming, doing nothing!")
