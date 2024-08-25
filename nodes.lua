@@ -1,3 +1,4 @@
+local light_level = 5
 minetest.register_node("seekblock:wall", {
     description = "Wall and floor",
     tiles = {"seekblock_wall.png"},
@@ -41,7 +42,11 @@ minetest.register_node("seekblock:fall", {
         dug = {
             name = "seekblock_pop"
         }
-    }
+    },
+    drop = {
+        max_items = 0,
+    },
+    light_source = light_level
 })
 minetest.register_node("seekblock:hide", {
     description = "Hiding block",
@@ -73,6 +78,7 @@ minetest.register_node("seekblock:hide", {
             gain = 2,
         }
     },
+    light_source = light_level,
     after_dig_node = function (pos, oldnode, oldmetadata, digger) 
         local seekblock = oldmetadata.fields.seekblock
         -- minetest.log("action", "WE HAVE A WINNER ".. seekblock)

@@ -1,3 +1,7 @@
+# 0.1.0
+* Made block glow so we can play in caves or at night
+* The clutter block no longer fill up the player's inventory (only seekblocks are available)
+
 # 0.0.1
 * Fixed bug where timeout from a previous game cleans up a current game
 * Fixed a bug where a player placed a hideblock not as part of a game, and then missing metadata when it is dug
